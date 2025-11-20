@@ -33,6 +33,10 @@ function generateAuthorization() {
   return Buffer.from(authorizationOrigin).toString('base64');
 }
 
+// 临时测试路由
+app.get('/api/test', (req, res) => {
+  res.send('测试路由正常');
+});
 // 讯飞接口代理（前端调用此接口，后端转发到讯飞 X1.5 模型）
 app.post('/api/xfyun/v2/chat/completions', async (req, res) => {
   try {
